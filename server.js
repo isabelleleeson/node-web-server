@@ -2,6 +2,8 @@ const express = require('express'); // also express middlewear
 const hbs = require('hbs');
 const fs = require('fs');
 
+const port = process.env.PORT || 3000;
+console.log(port);
 var app = express(); // creats app
 
 hbs.registerPartials(__dirname + '/views/partials/')
@@ -57,6 +59,6 @@ app.get('/bad', (req,res) => {
 })
 
 //binds application to host on machine
-app.listen(3000, () => {
-    console.log('Server is up on port 3000');
+app.listen(port, () => {
+    console.log(`Server is up on port ${port}`);
 }); // common port for developping locally
