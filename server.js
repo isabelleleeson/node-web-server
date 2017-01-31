@@ -40,23 +40,29 @@ app.get('/', (req, res) => {
     //res.send('<h1>Hello Express!</h1>');
     res.render('home.hbs', {
         pageTitle: 'Home Page',
-        currentYear: new Date().getFullYear(),
+        //currentYear: new Date().getFullYear(),
         welcomeMessage: 'Welcome to my bomb-ass website!'
     });
 });
 
-app.get('/about', (req,res) => {
+app.get('/about', (req, res) => {
     res.render('about.hbs', {
         pageTitle: 'About Page',
-        currentYear: new Date().getFullYear()
+        //currentYear: new Date().getFullYear()
     });
 });
 
-app.get('/bad', (req,res) => {
+app.get('/bad', (req, res) => {
     res.send({
         errorMessage: 'Unable to handle request'
     })
 })
+
+app.get('/projects', (req, res) => {
+    res.render('projects.hbs', {
+        pageTitle: 'Projects Page'
+    });
+});
 
 //binds application to host on machine
 app.listen(port, () => {
